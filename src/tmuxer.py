@@ -3,10 +3,18 @@
 list all the commands in tmux and allow for them to be constructed
 '''
 
-from Tkinter import *
+#from Tkinter import *
+
+import sys
+if sys.version_info[0] == 3:
+    from tkinter import *
+    import _thread as thread #WTF Python!
+else:
+    from Tkinter import *
+    import thread
+
 from subprocess import call
 import time
-import thread
 import functools
 
 class UserInterface(Frame):
